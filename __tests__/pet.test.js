@@ -90,4 +90,23 @@ describe('feed', () => {
     });
  });
 
+ describe('is the pet alive?', () => {
+    it('should return "false" if the pets fitness is 0 or less', () => {
+        pet.fitness = 0;
+        pet.isAlive;
+        expect(pet.isAlive).toEqual(false)
+    });
+
+    it('should return "false" if the pets hunger is 10 or more', () => {
+        pet.hunger = 10;
+        pet.isAlive;
+        expect(pet.isAlive).toEqual(false)
+    });
+
+    it('should return "false" if the pets age is 30 or more', () => {
+        pet.age = 30;
+        pet.isAlive;
+        expect(pet.isAlive).toEqual(false)
+    });
+ });
 });
