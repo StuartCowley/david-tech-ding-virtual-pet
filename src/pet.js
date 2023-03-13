@@ -7,6 +7,7 @@ function Pet(name) {
     this.age = MINIMUM_AGE;
     this.hunger = MINIMUM_HUNGER;
     this.fitness = MAXIMUM_FITNESS;
+    this.children = [];
 }
 
 Pet.prototype = {
@@ -61,6 +62,12 @@ Pet.prototype = {
 
     get isAlive() {
         return this.fitness > 0 && this.hunger < 10 && this.age < 30;
+    },
+
+    adoptChild(name) {
+        const child = new Pet(name);
+        this.children.push(child);
+        return child;
     }
 }
 

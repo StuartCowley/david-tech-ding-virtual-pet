@@ -129,4 +129,13 @@ describe('feed', () => {
         expect(pet.isAlive).toEqual(false)
     });
  });
+   
+describe('adds child array to the element', () => {
+    it ('should be able to have a baby pet', () => {
+        const parent = new Pet ('Dave');
+        const child = parent.adoptChild('Amelia');
+
+        expect(parent.children[0].name).toEqual('Amelia');
+    });
+    });
 });
