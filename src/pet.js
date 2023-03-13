@@ -11,12 +11,19 @@ function Pet(name) {
 
 Pet.prototype = {
     growUp() {
+     if(!this.isAlive) {
+         throw new Error('Your pet is no longer alive :(');
+     }
         this.age += 1;
         this.hunger += 5;
         this.fitness -= 3;
     },
 
     walk() {
+    if(!this.isAlive) {
+        throw new Error('Your pet is no longer alive :(');
+     };    
+
      if((this.fitness + 4) <= 10){
         return this.fitness += 4;
     } else {
@@ -25,6 +32,10 @@ Pet.prototype = {
     },
 
     feed() {
+    if(!this.isAlive) {
+        throw new Error('Your pet is no longer alive :(');
+     };
+
      if((this.hunger -3) >= 0){
         return this.hunger -=3;
      } else {
@@ -33,6 +44,10 @@ Pet.prototype = {
     },
 
     checkUp() {
+     if(!this.isAlive) {
+        throw new Error('Your pet is no longer alive :(');
+     };
+
      if(this.fitness <= 3 && this.hunger >= 5){
         return 'I am hungry AND I need a walk';
      } else if (this.fitness <=3){

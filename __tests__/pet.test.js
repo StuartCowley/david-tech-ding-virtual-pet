@@ -22,6 +22,11 @@ describe('constructor', () => {
 });
 
 describe('growUp', () => {
+    it('throws an error if the pet is not alive', () => {
+        pet.age = 30;
+        expect(() => pet.growUp()).toThrow('Your pet is no longer alive :(')
+      });
+
     it('increases the age by 1', () => {
         pet.growUp();
         expect(pet.age).toEqual(1);
@@ -47,6 +52,11 @@ describe('growUp', () => {
 });
     
 describe('walk', () => {
+    it('throws an error if the pet is not alive', () => {
+        pet.age = 30;
+        expect(() => pet.walk()).toThrow('Your pet is no longer alive :(')
+      });
+
     it('increases the fitness level by 4, but not exceeding MAXIMUM_FITNESS of 10', () => {
         pet.fitness = 4;
         pet.walk();
@@ -54,6 +64,11 @@ describe('walk', () => {
 })
 
 describe('feed', () => {
+    it('throws an error if the pet is not alive', () => {
+        pet.age = 30;
+        expect(() => pet.feed()).toThrow('Your pet is no longer alive :(')
+      });
+
     it('decreases the hunger level by 3, but not excedding MINIMUM_FITNESS of 0', () => {
         pet.hunger = 2;
         pet.feed();
@@ -63,6 +78,11 @@ describe('feed', () => {
  });
 
  describe('checkUp', () => {
+    it('throws an error if the pet is not alive', () => {
+        pet.age = 30;
+        expect(() => pet.checkUp()).toThrow('Your pet is no longer alive :(')
+      })
+
     it('should return "I need a walk" if the pets fitness is 3 or less', () => {
         pet.fitness = 3;
         pet.checkUp();
