@@ -136,6 +136,7 @@ describe('adds child array to the element', () => {
         const child = parent.adoptChild('Amelia');
 
         expect(parent.children[0].name).toEqual('Amelia');
+        expect(parent.children[0].fitness).toEqual(10);
     });
     });
 });
